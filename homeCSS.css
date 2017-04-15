@@ -1,0 +1,332 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+
+body{   
+    padding-left: 25%;
+    padding-right: 25%; 
+    
+}
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: -8px, -8px, -8px, -8px;
+  display: block;
+  background-image: url('homeBackground.jpg');
+  background-repeat: no-repeat; 
+  backgroud-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.content { /*===================================================  Main container for homePage */
+  margin-top: 10%;
+  margin-left: 30%;
+  margin-right: 30%; 
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2; 
+}
+
+div.overlayDiv{ /*=========================================  overlay div, show on "to Login" click"*/
+    Display: block;
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 2px 2px 50px #888888;
+    width: 700px;
+    height: 600px;
+    z-index: 4;
+    animation-name: showDiv;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+}
+
+div.innerOverlayDiv{
+    Display: block;
+    padding-top: 5%;
+}
+
+div.overlayDivForm{
+    Display: block;   
+    padding-left: 220px;
+    padding-right: 220px;
+}
+
+div.overlaySignUpDiv{
+    Display: block;
+    position: Absolute;
+    margin-top: -10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 2px 2px 50px #888888;
+    width: 700px;
+    height: 925px;
+    z-index: 3;
+    animation-name: showDiv;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+
+}
+@keyframes showDiv{
+     0%{opacity: 0.0;} 
+    25%{opacity: 0.25;}
+    50%{opacity: 0.5;}
+    75%{opacity: 0.75;}
+    100{opacity: 1.0; z-index: 3;}
+}
+@keyframes hideDiv{
+    0%{opacity: 1.0;}
+    25%{opacity: 0.75;}
+    50%{opacity: 0.50;}
+    75%{opacity: 0.25;}
+    100{opacity: 0.0; display: none;}
+}
+
+div.SignUpResultDiv{
+    display: block;
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    padding: 30px 20px 30px 20px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 2px 2px 50px #888888;
+    width: 700px;
+    height: 350px;
+    z-index: 4;
+}
+
+div.bottomDiv{ /*==============================================  bottom div, hide on "To login" click */
+    Display: block;
+    animation-name: showDiv;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+
+}
+
+
+
+h1{ /*=============================================================  page heading(bottom div) */
+    padding-top: 20%;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+    font-size: 250%;
+    font-family: "Roboto", sans-serif;
+}
+
+h2{ /*==========================================================  Login form heading (Overlay Div) */
+    padding-top: 5%;
+    text-align: center;
+    font-size: 200%;
+    font-family: "Roboto", sans-serif;   
+}
+
+h3{ /*========================================================  Form input titles (in Overlay Div) */
+    text-align: center;
+    /*padding-left: 35px; */
+    font-size: 100%;
+    font-family: 'Open Sans', sans-serif;  
+}
+h4{
+    text-align: center;
+    font-size: 120%;
+    font-weight: 100;
+    font-family: 'Open Sans', sans-serif; 
+}
+
+img.logo{ /*==================================================  Page Logo png (only on bottomDiv) */
+    Display: block;
+    margin: auto;
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 30px;
+    height: 150px;
+    width: 140px; 
+    z-index: 2;
+}
+
+return{
+    display: block;
+    text-align: right;
+    padding-top: 4px;
+    padding-right: 4px;
+    font-size: 100%;
+    font-family: "Roboto", sans-serif;
+}
+
+
+
+/* ============================================================  Login button */
+.loginButton {
+  display: block;
+  margin: auto;
+  
+  border-radius: 4px;
+  background-color: #536DFE;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  
+}
+
+.loginButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.loginButton span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.loginButton:hover span {
+  padding-right: 25px;
+}
+
+.loginButton:hover span:after {
+  opacity: 1;
+  right: 0;
+} /*================================================================================= */
+
+
+input[type=text]{
+    Display: block;
+    margin: auto;
+    padding-left: 2px;
+    padding-top: 1px;
+    font-size: 90%;
+    font-family: "Roboto", sans-serif;
+    border-radius: 2px;
+    width: 200px;
+    height: 30px;
+   
+}
+input[type=password]{
+    Display: block;
+    margin: auto;
+    padding-left: 2px;
+    padding-top: 1px;
+    font-size: 90%;
+    font-family: "Roboto", sans-serif;
+    border-radius: 2px;
+    width: 200px;
+    height: 30px; 
+}
+
+.sub{ /*submit button for the signIn page; Inline block so the two buttons float side by side */
+    Display: inline-block;
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    text-alight: center;
+    color: #536DFE;
+    font-size: 90%;
+    border-style: solid;
+    border-color: #536DFE;
+    border-width: 3px;
+    border-radius: 20px;
+    width: 120px;
+    height: 40px;
+    
+}
+.sub:hover{
+    background-color: #536DFE;
+    color: White;    
+}
+.sub2{ /*Submit button for the signUp page, moves the button to the center */
+    Display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+    text-alight: center;
+    color: #536DFE;
+    font-size: 90%;
+    border-style: solid;
+    border-color: #536DFE;
+    border-width: 3px;
+    border-radius: 20px;
+    width: 120px;
+    height: 40px;
+    
+}
+.sub2:hover{
+    background-color: #536DFE;
+    color: White;    
+}
+
+
+.signUp{ /*On click, shows the signUpDiv */
+    Display: inline;
+    float: center;
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    text-alight: center;
+    color: #536DFE;
+    font-size: 90%;
+    border-style: solid;
+    border-color: #536DFE;
+    border-width: 3px;
+    border-radius: 20px;
+    width: 120px;
+    height: 40px;
+    
+}
+.signUp:hover{
+    background-color: #536DFE;
+    color: White;    
+}
+
+.directHome{
+  display: block;
+  margin: 30px auto auto auto;
+  
+  border-radius: 4px;
+  background-color: #536DFE;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+
+
+
